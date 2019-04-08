@@ -1,0 +1,90 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin:100px auto 0 auto;
+    box-shadow: 0 0 5px green;/*向边框添加阴影*/
+    overflow: hidden;
+}
+
+
+.wrap {
+    position: absolute;
+    width: 4200px;
+    height: 400px;
+    z-index: 1;
+}
+
+
+
+/*把图片设置为左浮动*/
+.container .wrap img {
+    float: left;
+    width: 600px;
+    height: 400px;
+}
+
+
+
+/*设置小圆点按钮位置，在右下角*/
+.container .buttons {
+    position: absolute;
+    right: 150px;
+    bottom:20px;
+    width: 145px;
+    height: 10px;
+    z-index: 2;/*使按钮在图片之上显示*/
+}
+
+.container .buttons span {
+    margin-left: 5px;
+    display: inline-block;/*为了能够设置按钮的宽高及其他*/
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: orange;
+    text-align: center;
+    color:white;
+    cursor: pointer;/*设置光标为小手的形状*/
+}
+
+
+/*为span设置一个on类，以显示点击后的效果*/
+.container .buttons span.on{
+    background-color: red;
+}
+/*为左右按钮设置样式*/
+.container .arrow {
+    position: absolute;
+    top: 35%;
+    color: orange;
+    padding:0px 14px;
+    border-radius: 50%;
+    font-size: 50px;/*由于用实体表示的箭头，所以要用font-size才能改变大小*/
+    z-index: 2;
+    display: none;
+}
+
+.container .arrow_left {
+    left: 10px;
+}
+.container .arrow_right {
+    right: 10px;
+}
+
+/*鼠标移入图片才显示左右按钮*/
+.container:hover .arrow {
+    display: block;
+}
+.container .arrow:hover {
+    background-color: rgba(0,0,0,0.2);
+}
